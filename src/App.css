@@ -1,0 +1,432 @@
+/* Global styles */
+.App {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.Header {
+  font-size: 26px;
+  margin: 10px;
+}
+
+/* View buttons for selecting Grid or List view */
+.ViewButtons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.ViewButton {
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.ViewButton.Active {
+  background-color: #0056b3;
+}
+
+/* Todo form input and Add button */
+.TodoForm {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+  justify-content: center;
+}
+
+.TodoInput {
+  font-size: 16px;
+  padding: 5px 15px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 23px;
+  display: flex;
+  justify-content: center;
+  outline: none;
+  /* margin-right: 10px; */
+}
+
+.AddButton {
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.AddButton:hover {
+  background-color: #0056b3;
+}
+
+/* Search input */
+.Search {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.SearchInput {
+  font-size: 16px;
+  padding: 8px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  justify-content: center;
+  /* margin-right: 20px; */
+}
+
+/* Grid view for todos */
+.TodoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  margin: 20px;
+}
+
+/* Todo card styles */
+.TodoCard {
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.TodoCard.Completed {
+  background-color: #f0f0f0;
+}
+
+.TodoCard:hover {
+  transform: scale(1.05);
+}
+
+.TodoText {
+    font-size: 18px;
+    /* margin: 10px; */
+    align-items: flex-start;
+    max-height: 100px;
+    overflow: auto;
+    text-overflow: ellipsis;
+    /* white-space: nowrap; */
+    /* overflow-wrap: break-word; */
+    word-break: break-word;
+    text-align: left;
+    padding:10px
+}
+
+.TodoText input {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Buttons for removing and copying todos */
+.Buttons {
+  display: flex;
+  justify-content: flex-end;
+  grid-gap:10px;
+  padding: 10px;
+}
+
+.Buttons button {
+  font-size: 12px;
+  background-color: mediumaquamarine;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.Buttons button:hover {
+  background-color: #cc0000;
+}
+
+/* List view for todos */
+.ListView {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin: 20px;
+}
+
+.ListTodo {
+  font-size: 16px;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  /* cursor: pointer; */
+  transition: background-color 0.3s;
+}
+
+.ListTodo.Completed {
+  background-color: #c1eff0;
+}
+
+.ListTodo:hover {
+  background-color: #e0ecee;
+}
+
+/* Pagination and Clear button */
+.Pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  gap: 10px;
+}
+
+.PaginationButton {
+  font-size: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.PaginationButton:hover {
+  background-color: #0056b3;
+}
+
+.PaginationButton[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.PaginationButton.ActivePage {
+  background-color: #0056b3;
+  color: white;
+}
+.ErrorMessage {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+.ClearButton {
+  font-size: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 4px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  /* margin: 20px; */
+}
+
+.ClearButton:hover {
+  background-color: #0056b3;
+}
+
+.ClearButton[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Media queries for mobile responsiveness */
+@media (max-width: 768px) {
+  .Header {
+    font-size: 20xzn   px;
+  }
+
+  .ViewButton {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .TodoInput {
+    font-size: 14px;
+    padding: 5px 15px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 23px;
+    display: flex;
+    justify-content: center;
+    outline: none;
+  }
+
+  .AddButton {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .SearchInput {
+    font-size: 14px;
+    padding: 6px;
+    width: 100%;
+  }
+
+ /* Existing styles */
+
+/* Adjust the card width */
+.TodoCard {
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition: transform 0.3s;
+  cursor: pointer;
+  width: 100%; 
+  max-width: 300px; 
+  text-align: left; 
+  word-wrap: break-word; 
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column; 
+  justify-content: flex-start;
+
+}
+
+/* Larger font size for text */
+.TodoText {
+  font-size: 18px; 
+  margin-bottom: 10px; 
+  align-items: flex-start;
+}
+
+
+.Buttons {
+ display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 10px;
+/* Align buttons to the end (bottom) of the card */
+  
+}
+
+/* Remove the copy button hover style */
+.Buttons button:hover {
+  background-color: #ff0000;
+}
+.Buttons button {
+  font-size: 12px;
+  background-color: mediumaquamarine;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+/* Media queries (adjustments for mobile) remain unchanged */
+
+  .ListView {
+    margin: 10px;
+  }
+
+  .ListTodo {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .Pagination {
+    margin: 10px;
+  }
+
+  .PaginationButton {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .ClearButton {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
+/* Add this CSS for the clear text icon */
+.InputContainer {
+  position: relative;
+}
+
+.ClearInputIcon {
+  position: absolute;
+  right: 10px; 
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888; 
+  font-size: 18px; 
+}
+.ClearInputIcon:hover {
+  color: #000; 
+}
+/* Input Fields and Clear Icons */
+.InputContainer {
+  position: relative;
+}
+
+.TodoInput,
+.SearchInput {
+  font-size: 16px;
+  padding: 7px 14px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 23px;
+  display: flex;
+  justify-content: center;
+  outline: none;
+}
+
+.ClearInputIcon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #ccc;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.ClearInputIcon:hover {
+  color: #007bff;
+}
+
+/* Buttons */
+.AddButton {
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.AddButton:hover {
+  background-color: #0056b3;
+}
+
+/* Place the Add button and clear icon in the same line */
+.InputContainer {
+  display: flex;
+  align-items: center;
+}
+.AddButton {
+  margin-left: 10px;
+}
+
+/* Style the placeholder text */
+::placeholder {
+  color: #ccc;
+}
+
+/* Ensure the clear icon is not selectable text */
+.ClearInputIcon {
+  user-select: none;
+}
